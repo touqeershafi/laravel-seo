@@ -13,6 +13,7 @@ class TitleTag extends Tag
         string $inner,
     ) {
         $this->inner = trim($inner);
+        $this->attributes = config("seo.title.attributes", []);
     }
 
     public static function initialize(?SEOData $SEOData): ?Tag
@@ -23,6 +24,7 @@ class TitleTag extends Tag
             return null;
         }
 
+        
         return new static(
             inner: $title,
         );

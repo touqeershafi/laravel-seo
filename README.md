@@ -156,6 +156,14 @@ return [
          * just like the other pages.
          */
         'homepage_title' => null,
+
+        /**
+         * Configuration for dynamic title updates in frameworks like InertiaJS.
+         * This setting allows the title to be updated based on the "inertia" attribute during page transitions.
+         * For more details, refer to the discussion here:
+         * https://github.com/inertiajs/inertia/issues/978#issuecomment-982056346
+         */
+        'attributes' => []
     ],
 
     'description' => [
@@ -333,8 +341,9 @@ This package can also **generate any structured data** for you (also called sche
 Structured data is a very vast subject, so we highly recommend you to check the [Google documentation dedicated to it](https://developers.google.com/search/docs/appearance/structured-data/search-gallery).
 
 Structured data can be added in two ways:
-- Construct custom arrays of the structured data format, which is then rendered by the package in JSON on the correct place.
-- Use one of the 3 pre-defined templates to fluently build your structured data (`Article`, `BreadcrumbList`, `FaqPage`). 
+
+-   Construct custom arrays of the structured data format, which is then rendered by the package in JSON on the correct place.
+-   Use one of the 3 pre-defined templates to fluently build your structured data (`Article`, `BreadcrumbList`, `FaqPage`).
 
 ### Adding your first schema
 
@@ -393,8 +402,8 @@ public function getDynamicSEOData(): SEOData
     );
 }
 ```
-          
-This will construct an article schema using all data provided by the `SEOData` object. You can pass a closure to `->addArticle()` method to customize the individual schema markup. This closure will receive an instance of ArticleSchema as its argument. You can an additional author by using the `->addAuthor()` method. 
+
+This will construct an article schema using all data provided by the `SEOData` object. You can pass a closure to `->addArticle()` method to customize the individual schema markup. This closure will receive an instance of ArticleSchema as its argument. You can an additional author by using the `->addAuthor()` method.
 
 ```php
 use RalphJSmit\Laravel\SEO\Schema\ArticleSchema;

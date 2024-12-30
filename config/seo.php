@@ -83,6 +83,14 @@ return [
          * just like the other pages.
          */
         'homepage_title' => null,
+
+        /**
+         * Configuration for dynamic title updates in frameworks like InertiaJS.
+         * This setting allows the title to be updated based on the "inertia" attribute during page transitions.
+         * For more details, refer to the discussion here: 
+         * https://github.com/inertiajs/inertia/issues/978#issuecomment-982056346
+         */
+        'attributes' => []
     ],
 
     'description' => [
