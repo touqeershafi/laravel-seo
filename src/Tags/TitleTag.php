@@ -24,7 +24,6 @@ class TitleTag extends Tag
             return null;
         }
 
-        
         return new static(
             inner: $title,
         );
